@@ -4,6 +4,9 @@ import glob
 
 def scan(root):
 
+	if not os.path.isdir(root):
+		return
+
 	for course in os.walk(root).next()[1]:
 		path = root + course + '/1Students/'
 		if os.path.isdir(path):
